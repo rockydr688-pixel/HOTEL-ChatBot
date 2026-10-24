@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Harbor View Hotel – ChatGPT AI Concierge & Reservations</title>
-  <meta name="description" content="ChatGPT-styled luxury hotel reservations platform with instant room booking, live pricing, and interactive hotel PYQ (Frequently Asked Questions).">
+  <title>Harbor View Hotel – Reservations & Concierge</title>
+  <meta name="description" content="Minimalist luxury hotel reservations platform with instant room booking, rates, and hotel PYQs.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,14 +17,14 @@
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <button id="sidebarNewChat" class="btn-new-chat" type="button" title="Start new conversation (Ctrl+N)">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <line x1="12" y1="5" x2="12" y2="19"></line>
             <line x1="5" y1="12" x2="19" y2="12"></line>
           </svg>
-          <span>New reservation</span>
+          <span>New Reservation</span>
         </button>
         <button id="sidebarCollapseBtn" class="btn-icon sidebar-toggle-btn" type="button" title="Collapse sidebar">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
             <line x1="9" y1="3" x2="9" y2="21"></line>
           </svg>
@@ -35,7 +35,7 @@
         <!-- Quick Platform Actions -->
         <div class="sidebar-section-label">HOTEL CONCIERGE</div>
         <button class="nav-item" id="navPyqBtn" type="button">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
             <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
             <line x1="12" y1="17" x2="12.01" y2="17"></line>
@@ -44,7 +44,7 @@
           <span class="badge-pill">12</span>
         </button>
         <button class="nav-item" id="navBookingsBtn" type="button">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
             <line x1="16" y1="2" x2="16" y2="6"></line>
             <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -54,7 +54,7 @@
           <span class="badge-pill" id="bookingCountBadge">0</span>
         </button>
         <button class="nav-item" id="navRoomTypesBtn" type="button">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 20v-8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8"></path>
             <path d="M5 10V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"></path>
             <line x1="3" y1="20" x2="21" y2="20"></line>
@@ -64,15 +64,11 @@
 
         <!-- Chat History Sessions -->
         <div class="sidebar-section-label">CONVERSATIONS</div>
-        <div class="chat-sessions-list" id="chatSessionsList">
-          <!-- Populated by JS -->
-        </div>
+        <div class="chat-sessions-list" id="chatSessionsList"></div>
 
         <!-- Recent Reservations Pill List -->
         <div class="sidebar-section-label" id="activeBookingsLabel">SAVED STAYS</div>
-        <div class="active-bookings-list" id="activeBookingsSidebar">
-          <!-- Populated by JS -->
-        </div>
+        <div class="active-bookings-list" id="activeBookingsSidebar"></div>
       </div>
 
       <!-- User Concierge Profile & Utilities -->
@@ -81,21 +77,21 @@
           <div class="status-indicator-dot online"></div>
           <div class="status-info">
             <div class="status-title">Harbor View Concierge</div>
-            <div class="status-desc">Live 24/7 AI Reservations</div>
+            <div class="status-desc">Active 24/7 Reservations</div>
           </div>
         </div>
         <div class="sidebar-footer-controls">
           <button id="themeToggleBtn" class="btn-footer-util" type="button" title="Toggle Dark/Light theme">
-            <svg id="themeIconDark" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg id="themeIconDark" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
             <span id="themeToggleText">Dark mode</span>
           </button>
           <a href="tel:+15550102400" class="btn-footer-util" title="Call Hotel Front Desk">
-            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
-            <span>Call desk</span>
+            <span>Call Desk</span>
           </a>
         </div>
       </div>
@@ -110,18 +106,18 @@
       <header class="topbar">
         <div class="topbar-left">
           <button id="sidebarMobileToggle" class="btn-icon mobile-menu-btn" type="button" aria-label="Toggle menu">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <line x1="3" y1="18" x2="21" y2="18"></line>
             </svg>
           </button>
           
-          <!-- Model Selector Pill (ChatGPT Style) -->
+          <!-- Model Selector Pill -->
           <div class="model-selector-pill" id="modelSelectorBtn">
             <span class="model-name">Harbor View Concierge</span>
-            <span class="model-badge">GPT-4o Luxury</span>
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <span class="model-badge">Concierge Edition</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </div>
@@ -129,7 +125,7 @@
 
         <div class="topbar-right">
           <button id="topbarPyqBtn" class="btn-topbar-action" type="button">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="12" y1="16" x2="12" y2="12"></line>
               <line x1="12" y1="8" x2="12.01" y2="8"></line>
@@ -137,13 +133,13 @@
             <span>Hotel PYQs</span>
           </button>
           <button id="topbarBookingsBtn" class="btn-topbar-action" type="button">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
             </svg>
             <span>Bookings</span>
           </button>
           <button id="newChatTopBtn" class="btn-topbar-icon" type="button" title="Start new conversation">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <line x1="12" y1="5" x2="12" y2="19"></line>
               <line x1="5" y1="12" x2="19" y2="12"></line>
             </svg>
@@ -153,20 +149,24 @@
 
       <!-- Chat Feed Display Area -->
       <div class="chat-container" id="chatContainer">
-        <!-- Hero Blank State (ChatGPT Welcome Screen) -->
+        <!-- Hero Blank State -->
         <div class="chat-hero" id="chatHero">
           <div class="hero-brand">
             <div class="hero-logo-halo">
-              <img src="assets/favicon.svg" alt="Harbor View Hotel Logo" width="48" height="48">
+              <img src="assets/favicon.svg" alt="Harbor View Hotel" width="44" height="44">
             </div>
-            <h2>Welcome to Harbor View Hotel</h2>
-            <p>Your AI Concierge is ready. Reserve rooms, inspect luxury suites, or explore popular hotel PYQs.</p>
+            <h2>Harbor View Hotel & Suites</h2>
+            <p>Direct reservations concierge. Inquire about rooms, availability, or review hotel previous year questions.</p>
           </div>
 
-          <!-- Curated Hotel PYQ / Prompt Suggestion Cards -->
+          <!-- Clean Minimalist PYQ Prompt Cards Grid (No Emojis) -->
           <div class="hero-pyq-grid">
             <div class="pyq-card" data-prompt="I would like to book a room for 2 nights starting tomorrow">
-              <div class="pyq-card-icon">🛏️</div>
+              <div class="pyq-card-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 7v11M21 7v11M3 14h18M3 11a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3v3H3v-3z"/>
+                </svg>
+              </div>
               <div class="pyq-card-content">
                 <h4>Book a Stay</h4>
                 <p>Reserve a Queen, Deluxe King, or Suite step-by-step</p>
@@ -174,42 +174,70 @@
             </div>
 
             <div class="pyq-card" data-prompt="What are your room types, features, and nightly prices?">
-              <div class="pyq-card-icon">💎</div>
+              <div class="pyq-card-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
               <div class="pyq-card-content">
                 <h4>Room Rates & Suites</h4>
-                <p>Compare standard rooms, ocean balcony suites, & prices</p>
+                <p>Compare standard rooms, ocean balcony suites, and rates</p>
               </div>
             </div>
 
             <div class="pyq-card" data-prompt="What are your check-in and check-out times? Can I get early check-in?">
-              <div class="pyq-card-icon">🕒</div>
+              <div class="pyq-card-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
               <div class="pyq-card-content">
                 <h4>Check-in & Check-out PYQ</h4>
-                <p>Arrival timings, early check-in, and late departure fees</p>
+                <p>Arrival timings, early check-in, and late departure options</p>
               </div>
             </div>
 
             <div class="pyq-card" data-prompt="Tell me about hotel amenities, rooftop pool, and breakfast options">
-              <div class="pyq-card-icon">🍳</div>
+              <div class="pyq-card-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                  <line x1="6" y1="1" x2="6" y2="4"></line>
+                  <line x1="10" y1="1" x2="10" y2="4"></line>
+                  <line x1="14" y1="1" x2="14" y2="4"></line>
+                </svg>
+              </div>
               <div class="pyq-card-content">
                 <h4>Amenities & Breakfast</h4>
-                <p>Infinity pool, artisan breakfast buffet, & 24/7 gym</p>
+                <p>Rooftop pool, breakfast buffet hours, and fitness studio</p>
               </div>
             </div>
 
             <div class="pyq-card" data-prompt="What is your cancellation and refund policy?">
-              <div class="pyq-card-icon">🛡️</div>
+              <div class="pyq-card-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
               <div class="pyq-card-content">
                 <h4>Cancellation Policy PYQ</h4>
-                <p>Free 48h cancellation rules, refund policies, & fees</p>
+                <p>Complimentary 48-hour cancellation policy and refund terms</p>
               </div>
             </div>
 
             <div class="pyq-card" data-prompt="Do you offer airport shuttle services and parking?">
-              <div class="pyq-card-icon">🚗</div>
+              <div class="pyq-card-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+              </div>
               <div class="pyq-card-content">
-                <h4>Shuttle & Free Parking</h4>
-                <p>Airport transfer schedule, valet parking, and location</p>
+                <h4>Shuttle & Parking</h4>
+                <p>Airport transfer schedule, valet parking, and directions</p>
               </div>
             </div>
           </div>
@@ -219,7 +247,7 @@
         <div class="chat-messages" id="chat" aria-live="polite"></div>
       </div>
 
-      <!-- Floating Composer Area (ChatGPT Style) -->
+      <!-- Floating Composer Area -->
       <footer class="composer-container">
         <!-- Dynamic Quick Suggestion Chips -->
         <div id="chips" class="chips-bar"></div>
@@ -227,7 +255,7 @@
         <div class="composer-box">
           <div class="composer-inner">
             <button id="quickActionAttachBtn" class="btn-composer-icon" type="button" title="View PYQ Bank">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
                 <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
                 <line x1="12" y1="17" x2="12.01" y2="17"></line>
@@ -237,13 +265,13 @@
             <textarea 
               id="input" 
               rows="1" 
-              placeholder="Ask about room bookings, hotel PYQ, amenities, or policies..." 
+              placeholder="Inquire about reservations, rooms, or hotel PYQ..." 
               aria-label="Message Hotel AI Concierge"></textarea>
 
             <div class="composer-actions">
-              <!-- Voice Dictation Button (Web Speech API) -->
+              <!-- Voice Dictation Button -->
               <button id="voiceBtn" class="btn-composer-icon" type="button" title="Speak message">
-                <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
                   <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
                   <line x1="12" y1="19" x2="12" y2="23"></line>
@@ -251,9 +279,9 @@
                 </svg>
               </button>
 
-              <!-- Send Button with Arrow -->
+              <!-- Send Button -->
               <button id="send" class="btn-composer-send" type="button" aria-label="Send message" disabled>
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="12" y1="19" x2="12" y2="5"></line>
                   <polyline points="5 12 12 5 19 12"></polyline>
                 </svg>
@@ -262,12 +290,12 @@
           </div>
         </div>
         <p class="composer-disclaimer">
-          Harbor View AI Concierge can make mistakes. All reservations are securely saved locally. Call +1 (555) 010-2400 for emergency assistance.
+          Harbor View Concierge. Reservations are stored locally. For urgent inquiries call +1 (555) 010-2400.
         </p>
       </footer>
     </main>
 
-    <!-- PYQ (Frequently Asked Questions) Modal Drawer -->
+    <!-- PYQ Modal Drawer -->
     <div class="modal-backdrop" id="pyqModal">
       <div class="modal-dialog">
         <div class="modal-header">
@@ -279,27 +307,25 @@
         </div>
 
         <div class="modal-search-box">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="text" id="pyqSearchInput" placeholder="Filter questions by keywords (e.g. check-in, pool, pets, refund)...">
+          <input type="text" id="pyqSearchInput" placeholder="Filter questions by keyword (e.g. check-in, pool, cancellation, rate)...">
         </div>
 
         <!-- Category Filter Pills -->
         <div class="modal-category-filters" id="pyqCategoryFilters">
           <button class="filter-pill active" data-category="all">All PYQs</button>
           <button class="filter-pill" data-category="Booking & Availability">Booking</button>
-          <button class="filter-pill" data-category="Check-in & Check-out">Check-in/out</button>
+          <button class="filter-pill" data-category="Check-in & Check-out">Check-in / Out</button>
           <button class="filter-pill" data-category="Pricing & Taxes">Rates & Tax</button>
           <button class="filter-pill" data-category="Dining & Breakfast">Dining</button>
           <button class="filter-pill" data-category="Facilities & Amenities">Amenities</button>
           <button class="filter-pill" data-category="Policies & Pets">Policies</button>
         </div>
 
-        <div class="modal-body" id="pyqListContainer">
-          <!-- Populated from HOTEL.pyq in JS -->
-        </div>
+        <div class="modal-body" id="pyqListContainer"></div>
       </div>
     </div>
 
@@ -308,18 +334,16 @@
       <div class="modal-dialog">
         <div class="modal-header">
           <div class="modal-title-group">
-            <span class="modal-badge">YOUR TRIPS</span>
+            <span class="modal-badge">YOUR RESERVATIONS</span>
             <h3>My Reservations</h3>
           </div>
           <button class="modal-close-btn" id="closeBookingsModal" type="button" aria-label="Close modal">&times;</button>
         </div>
-        <div class="modal-body" id="bookingsListContainer">
-          <!-- Populated from LocalStorage in JS -->
-        </div>
+        <div class="modal-body" id="bookingsListContainer"></div>
       </div>
     </div>
 
-    <!-- Toast Notification Container -->
+    <!-- Toast Notification -->
     <div class="toast-notification" id="toast"></div>
   </div>
 

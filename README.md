@@ -4,7 +4,7 @@ A state-of-the-art, ChatGPT-styled hotel reservation and guest concierge platfor
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
 1. **ChatGPT-Styled Platform Experience**:
    - **Collapsible Sidebar**: New Chat (`Ctrl+N`), active chat session history with auto-naming, saved stays list with reference numbers, and quick access to Hotel PYQs.
@@ -29,7 +29,7 @@ A state-of-the-art, ChatGPT-styled hotel reservation and guest concierge platfor
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 1. Open `index.html` directly in any web browser, or:
 2. Start a local server:
@@ -40,7 +40,7 @@ A state-of-the-art, ChatGPT-styled hotel reservation and guest concierge platfor
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 - `index.html`: ChatGPT shell, sidebar, chat feed, floating composer, and modal drawers.
 - `css/style.css`: ChatGPT dark/light themes, typography, glassmorphism, responsive grid, and custom scrollbars.

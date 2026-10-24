@@ -304,10 +304,10 @@
         </dl>
         <div class="receipt-footer-actions">
           ${refCode ? `
-            <button class="btn-receipt-action" id="btnCopyRef_${refCode}" type="button">📋 Copy Ref</button>
-            <button class="btn-receipt-action danger" id="btnCancelRef_${refCode}" type="button">✕ Cancel Stay</button>
+            <button class="btn-receipt-action" id="btnCopyRef_${refCode}" type="button">Copy Reference</button>
+            <button class="btn-receipt-action danger" id="btnCancelRef_${refCode}" type="button">Cancel Stay</button>
           ` : `
-            <button class="btn-receipt-action" id="btnPrintFolio" type="button">🖨️ Print Summary</button>
+            <button class="btn-receipt-action" id="btnPrintFolio" type="button">Print Folio</button>
           `}
         </div>
       `;
@@ -680,8 +680,8 @@
           <dd class="highlight">$${Number(b.total).toFixed(2)}</dd>
         </dl>
         <div class="receipt-footer-actions">
-          <button class="btn-receipt-action" id="openChat_${b.ref}" type="button">💬 View in Chat</button>
-          ${isConfirmed ? `<button class="btn-receipt-action danger" id="cancelStay_${b.ref}" type="button">✕ Cancel</button>` : ""}
+          <button class="btn-receipt-action" id="openChat_${b.ref}" type="button">View in Chat</button>
+          ${isConfirmed ? `<button class="btn-receipt-action danger" id="cancelStay_${b.ref}" type="button">Cancel</button>` : ""}
         </div>
       `;
 
